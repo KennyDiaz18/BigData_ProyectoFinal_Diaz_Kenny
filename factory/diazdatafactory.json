@@ -1,0 +1,9 @@
+{
+	"name": "diazdatafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5079ae59-1c16-447f-a33a-652543f95987",
+		"tenantId": "4d46e034-2a68-4577-bb6d-9ee331ce964f"
+	}
+}
