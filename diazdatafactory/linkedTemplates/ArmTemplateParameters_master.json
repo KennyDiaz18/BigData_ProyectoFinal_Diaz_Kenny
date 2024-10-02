@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "diazdatafactory"
+		},
+		"AzureDatabricks_DataFactory_Cobre_Plata_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks_DataFactory_Plata_Oro_accessToken": {
+			"value": ""
+		},
+		"Conector_ADLS_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks_DataFactory_Cobre_Plata_properties_typeProperties_existingClusterId": {
+			"value": "1001-000307-nx8rvusx"
+		},
+		"AzureDatabricks_DataFactory_Plata_Oro_properties_typeProperties_existingClusterId": {
+			"value": "1001-000307-nx8rvusx"
+		},
+		"Conector_ADLS_properties_typeProperties_url": {
+			"value": "https://kennydiazacertus.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
