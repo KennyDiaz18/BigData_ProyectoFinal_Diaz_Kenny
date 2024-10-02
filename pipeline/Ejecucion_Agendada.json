@@ -1,0 +1,74 @@
+{
+	"name": "Ejecucion_Agendada",
+	"properties": {
+		"description": "Esto combina mis pipelines anteriores para que se ejecute como una tarea.",
+		"activities": [
+			{
+				"name": "Ingesta de Datos a Cobre",
+				"description": "Ingesta de Datos a Cobre",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ingesta_input_capa_bronce",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Bronce a Plata",
+				"description": "Bronce a Plata",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Ingesta de Datos a Cobre",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ingesta_capa_bronce_plata",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Plata a Oro",
+				"description": "Plata a Oro",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Bronce a Plata",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ingesta_input_capa_plata_oro",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
