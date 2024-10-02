@@ -1,0 +1,25 @@
+{
+	"name": "Agenda_Ejecucion",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Ejecucion_Agendada",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2024-10-02T01:07:00",
+				"endTime": "2024-10-05T01:07:00",
+				"timeZone": "SA Pacific Standard Time"
+			}
+		}
+	}
+}
